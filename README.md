@@ -1,6 +1,6 @@
-![banner](https://user-images.githubusercontent.com/2349518/234388904-4a3d07fd-563c-429a-8ceb-7b6f5da90e6f.svg)
+[![banner](https://user-images.githubusercontent.com/2349518/234388904-4a3d07fd-563c-429a-8ceb-7b6f5da90e6f.svg)](https://codebasementor.com?utm_source=github&utm_medium=javascript-photo-gallery&utm_campaign=github_readmes)
 
-# JavaScript Photo Gallery by [CodebaseMentor](https://codebasementor.com?utm_source=github&utm_medium=javascript-photo-gallery&utm_campaign=javascript-photo-gallery)
+# JavaScript Photo Gallery by [CodebaseMentor](https://codebasementor.com?utm_source=github&utm_medium=javascript-photo-gallery&utm_campaign=github_readmes)
 
 ![Discord](https://img.shields.io/discord/968893691769000027?color=7289da&label=Discord&logo=discord&logoColor=white&style=for-the-badge)
 
@@ -26,7 +26,7 @@ You will learn and gain experience with:
 1. Open index.html in your browser to see the current state of the project.
 1. Fix all the issues (hints are provided as TODO comments in the code)
 1. Once all your solutions are complete, create a single Pull Request to this repository
-1. Check if your solutions passes our automated tests. You need to create an account on [CodebaseMentor](https://www.codebasementor.com) (free of charge) to do this.
+1. Check if your solutions passes our automated tests. You need to create an account on [CodebaseMentor](https://www.codebasementor.com?utm_source=github&utm_medium=javascript-photo-gallery&utm_campaign=github_readmes) (free of charge) to do this.
 
 ## Need help?
 
@@ -36,4 +36,4 @@ The best way to ask for help is to ask our Discord community.
 
 ## Want more challenges?
 
-Browse our [list of challenges](https://app.codebasementor.com/) and [join our Discord](https://discord.gg/6VsSMZaM7q) to get notified when new challenges are released.
+Browse our [list of challenges](https://app.codebasementor.com?utm_source=github&utm_medium=javascript-photo-gallery&utm_campaign=github_readmes) and [join our Discord](https://discord.gg/6VsSMZaM7q) to get notified when new challenges are released.
