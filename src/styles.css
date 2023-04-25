@@ -1,0 +1,92 @@
+body {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem 1rem;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.grid-wrapper {
+  display: grid;
+  gap: 1rem;
+}
+
+.image {
+  height: auto;
+  max-width: 100%;
+  border-radius: 0.5rem;
+}
+
+@media (min-width: 768px) {
+  .gallery {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.modal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.hidden {
+  display: none;
+}
+
+.modal-image {
+  max-width: 90%;
+  max-height: 90%;
+  margin: auto;
+  display: block;
+}
+
+.close {
+  position: absolute;
+  top: 15px;
+  right: 25px;
+  color: white;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.nav-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.8);
+  color: #000;
+  font-size: 28px;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+}
+
+.prev-btn {
+  left: 10px;
+}
+
+.next-btn {
+  right: 10px;
+}
+
+.hidden * {
+  display: none;
+}
+
+.nav-btn:disabled {
+  background: rgba(255, 255, 255, 0.5);
+  color: #ccc;
+  cursor: not-allowed;
+}
