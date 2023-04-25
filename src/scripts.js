@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // TODO: (Issue #3) Add an event listener for the closeBtn to close the modal
 
-  // TODO: (Issue #3) Add an event listener to close the modal when clicking the modal background
+  // TODO: (Issue #4) Add an event listener to close the modal when clicking the modal background
 
-  // TODO: (Issue #4) Create a function to update the state of the navigation buttons based on currentImageIndex
+  // TODO: (Issue #5) Create a function to update the state of the navigation buttons based on currentImageIndex
 });
