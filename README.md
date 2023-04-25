@@ -6,7 +6,7 @@ This is an image gallery project with a modal feature. Your task is to fix these
 
 1. Implement the functionality to display the clicked image in a modal.
 1. Add modal navigation button functionality for moving between images.
-1. Add functionality to close the modal when the close button is clicked or when clicking outside the modal content.
+1. Add functionality to close the modal when the close button is clicked and when clicking the modal background.
 1. Disable the navigation buttons when the first or last image is displayed.
 
 ## Learning Objectives
