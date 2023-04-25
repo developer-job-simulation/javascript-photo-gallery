@@ -81,12 +81,10 @@ body {
   right: 10px;
 }
 
-/* Add this to make buttons invisible when hidden */
 .hidden * {
   display: none;
 }
 
-/* Add the following CSS to style the disabled buttons */
 .nav-btn:disabled {
   background: rgba(255, 255, 255, 0.5);
   color: #ccc;
