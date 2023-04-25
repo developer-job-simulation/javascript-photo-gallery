@@ -20,9 +20,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // TODO: (Issue #2) Add event listeners for the prevBtn and nextBtn for modal navigation functionality
   // Clean Code Hint: Issue #1 and #2 both deal with updating the modal image based on currentImageIndex. Consider creating a function to handle this functionality.
-  function updateModalImage() {
-    modalImage.src = images[currentImageIndex].src;
-  }
 
   nextBtn.addEventListener('click', () => {
     currentImageIndex = (currentImageIndex + 1) % images.length;
@@ -42,7 +39,19 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   // TODO: (Issue #3) Add an event listener to close the modal when clicking the modal background
-
+  if (modal) {
+    modal.addEventListener('click', (event) => {
+      if (event.target === modal) {
+        modal.classList.remove('active');
+        modal.classList.add('hidden')
+      }
+    });
+  }
 
   // TODO: (Issue #4) Create a function to update the state of the navigation buttons based on currentImageIndex
+
+  function updateModalImage() {
+    modalImage.src = images[currentImageIndex].src;
+  }
+
 });
