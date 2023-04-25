@@ -1,23 +1,42 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const modal = document.getElementById("modal");
-    const modalImage = document.getElementById("modalImage");
-    const closeBtn = document.getElementById("closeBtn");
+  const modal = document.getElementById("modal");
+  const modalImage = document.getElementById("modalImage");
+  const closeBtn = document.getElementById("closeBtn");
+  const prevBtn = document.getElementById("prevBtn");
+  const nextBtn = document.getElementById("nextBtn");
 
-    document.querySelectorAll(".image").forEach((image) => {
-        image.addEventListener("click", () => {
-            modalImage.src = image.src;
-            modal.classList.remove("hidden");
-        });
-    });
+  const images = Array.from(document.querySelectorAll(".image"));
+  let currentImageIndex = 0;
 
-    closeBtn.addEventListener("click", () => {
-        modal.classList.add("hidden");
+  images.forEach((image, index) => {
+    image.addEventListener("click", () => {
+      currentImageIndex = index;
+      updateModalImage();
+      modal.classList.remove("hidden");
     });
+  });
 
-    window.addEventListener("click", (event) => {
-        if (event.target === modal) {
-            modal.classList.add("hidden");
-        }
-    });
+  prevBtn.addEventListener("click", () => {
+    currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
+    updateModalImage();
+  });
+
+  nextBtn.addEventListener("click", () => {
+    currentImageIndex = (currentImageIndex + 1) % images.length;
+    updateModalImage();
+  });
+
+  closeBtn.addEventListener("click", () => {
+    modal.classList.add("hidden");
+  });
+
+  window.addEventListener("click", (event) => {
+    if (event.target === modal) {
+      modal.classList.add("hidden");
+    }
+  });
+
+  function updateModalImage() {
+    modalImage.src = images[currentImageIndex].src;
+  }
 });
-
