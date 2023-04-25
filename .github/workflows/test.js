@@ -9,7 +9,8 @@ let filePath = "./src/index.html";
 const hasAllClasses = (dom, id, classes) =>
   classes.every((val) => dom.window.document.getElementById(id).getAttribute("class").split(" ").includes(val));
 
-const click = (dom, selector) => dom.window.document.querySelector(selector).dispatchEvent(new dom.window.MouseEvent("click"));
+const click = (dom, selector) =>
+  dom.window.document.querySelector(selector).dispatchEvent(new dom.window.MouseEvent("click"));
 
 // Tests
 
@@ -19,7 +20,7 @@ test("simple test", async () => {
     resources: "usable",
   });
   await setTimeout(10); // let css load
-  assert.is(dom.window.document.querySelector("h1").innerHTML, "Hello World");
+  assert.is(dom.window.document.querySelector("title").innerHTML, "Gallery");
 });
 
 test.run();
