@@ -1,6 +1,6 @@
 ![banner](https://user-images.githubusercontent.com/2349518/234388904-4a3d07fd-563c-429a-8ceb-7b6f5da90e6f.svg)
 
-# JavaScript Photo Gallery by [CodebaseMentor](https://codebasementor.com)
+# JavaScript Photo Gallery by [CodebaseMentor](https://codebasementor.com?utm_source=github&utm_medium=javascript-photo-gallery&utm_campaign=javascript-photo-gallery)
 
 ![Discord](https://img.shields.io/discord/968893691769000027?color=7289da&label=Discord&logo=discord&logoColor=white&style=for-the-badge)
 
