@@ -12,6 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
     image.addEventListener("click", () => {
       currentImageIndex = index;
       updateModalImage();
+      updateNavButtons();
       modal.classList.remove("hidden");
     });
   });
@@ -19,11 +20,13 @@ document.addEventListener("DOMContentLoaded", () => {
   prevBtn.addEventListener("click", () => {
     currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
     updateModalImage();
+    updateNavButtons();
   });
 
   nextBtn.addEventListener("click", () => {
     currentImageIndex = (currentImageIndex + 1) % images.length;
     updateModalImage();
+    updateNavButtons();
   });
 
   closeBtn.addEventListener("click", () => {
@@ -38,5 +41,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function updateModalImage() {
     modalImage.src = images[currentImageIndex].src;
+  }
+
+  function updateNavButtons() {
+    prevBtn.disabled = currentImageIndex === 0;
+    nextBtn.disabled = currentImageIndex === images.length - 1;
   }
 });
