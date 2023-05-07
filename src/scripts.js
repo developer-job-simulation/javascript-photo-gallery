@@ -63,14 +63,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
   // TODO: (Issue #3) Add an event listener for the closeBtn to close the modal
-  closeBtn.addEventListener("click",(e)=>{
-    modal.classList.add("hidden");
-    modalImage.src = "";
-  });
+  // closeBtn.addEventListener("click",(e)=>{
+  //   modal.classList.add("hidden");
+  //   modalImage.src = "";
+  // });
 
   // TODO: (Issue #3) Add an event listener to close the modal when clicking the modal background
-  window.addEventListener("click",(e)=>{
-    if(e.target==modal){
+  modal.addEventListener("click",(e)=>{
+    if(e.target!=modalImage && e.target!= prevBtn && e.target !=nextBtn){
       modal.classList.add("hidden");
       modalImage.src = "";  
     }
