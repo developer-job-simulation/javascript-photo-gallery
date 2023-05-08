@@ -8,14 +8,47 @@ document.addEventListener("DOMContentLoaded", () => {
   const images = Array.from(document.querySelectorAll(".image"));
   let currentImageIndex = 0;
 
-  // TODO: (Issue #1) Add an event listener for each image in the gallery to show it in the modal when clicked
+  for (let i = 0; i < images.length; i++) {
+    images[i].addEventListener("click", () => {
+      modal.className = "modal";
+      modalImage.src = images[i].src;
+      currentImageIndex = i;
+      updateButtons();
+    });
+  }
 
-  // TODO: (Issue #2) Add event listeners for the prevBtn and nextBtn for modal navigation functionality
-  // Clean Code Hint: Issue #1 and #2 both deal with updating the modal image based on currentImageIndex. Consider creating a function to handle this functionality.
+  prevBtn.addEventListener("click", () => {
+    currentImageIndex--;
+    modalImage.src = images[currentImageIndex].src;   
+    updateButtons();
+  });
 
-  // TODO: (Issue #3) Add an event listener for the closeBtn to close the modal
+  nextBtn.addEventListener("click", () => {
+    currentImageIndex++;
+    modalImage.src = images[currentImageIndex].src;
+    updateButtons();
+  });
 
-  // TODO: (Issue #3) Add an event listener to close the modal when clicking the modal background
+  closeBtn.addEventListener("click", () => {
+    modal.className = "hidden";
+  });
 
-  // TODO: (Issue #4) Create a function to update the state of the navigation buttons based on currentImageIndex
+  modal.addEventListener("click", (event) => {
+    if (event.target === modal) {
+      modal.className = "hidden";
+    }
+  });
+
+  function updateButtons() {
+    if (currentImageIndex === 0) {
+      prevBtn.disabled = true;
+    } else {
+      prevBtn.disabled = false;
+    }
+    if (currentImageIndex === images.length - 1) {
+      nextBtn.disabled = true;
+    } else {
+      nextBtn.disabled = false;
+    }
+  }
 });
