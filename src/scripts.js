@@ -10,12 +10,11 @@ document.addEventListener('DOMContentLoaded', () => {
   let imageName;
 
   function disableNavBtnsOnEdges(index) {
+    prevBtn.disabled = false;
+    nextBtn.disabled = false;
+
     if (index === 0) prevBtn.disabled = true;
     else if (index === 11) nextBtn.disabled = true;
-    else {
-      prevBtn.disabled = false;
-      nextBtn.disabled = false;
-    }
   }
 
   images.forEach((image) =>
