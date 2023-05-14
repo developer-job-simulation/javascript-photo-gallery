@@ -34,8 +34,13 @@ document.addEventListener("DOMContentLoaded", () => {
     modal.classList.add("hidden");
   });
 
-  document.addEventListener("click", (event) => {
-    if (event.target === modal) {
+  modal.addEventListener("click", (event) => {
+    if (
+      event.target.id !== "modalImage" &&
+      event.target.id !== "closeBtn" &&
+      event.target.id !== "prevBtn" &&
+      event.target.id !== "nextBtn"
+    ) {
       modal.classList.add("hidden");
     }
   });
