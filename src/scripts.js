@@ -8,14 +8,49 @@ document.addEventListener("DOMContentLoaded", () => {
   const images = Array.from(document.querySelectorAll(".image"));
   let currentImageIndex = 0;
 
-  // TODO: (Issue #1) Add an event listener for each image in the gallery to show it in the modal when clicked
+  images.map((image, index) => {
+    image.addEventListener("click", () => {
+      modalImage.src = image.src;
+      modal.classList.remove("hidden");
+      currentImageIndex = index;
+      updateState(currentImageIndex);
+    });
+  });
 
-  // TODO: (Issue #2) Add event listeners for the prevBtn and nextBtn for modal navigation functionality
-  // Clean Code Hint: Issue #1 and #2 both deal with updating the modal image based on currentImageIndex. Consider creating a function to handle this functionality.
+  prevBtn.addEventListener("click", () => {
+    updateState(currentImageIndex);
+    --currentImageIndex;
+    modalImage.src = images[currentImageIndex].src;
+    updateState(currentImageIndex);
+  });
+  nextBtn.addEventListener("click", () => {
+    updateState(currentImageIndex);
+    ++currentImageIndex;
+    modalImage.src = images[currentImageIndex].src;
+    updateState(currentImageIndex);
+  });
 
-  // TODO: (Issue #3) Add an event listener for the closeBtn to close the modal
+  closeBtn.addEventListener("click", () => {
+    modal.classList.add("hidden");
+  });
 
-  // TODO: (Issue #3) Add an event listener to close the modal when clicking the modal background
+  modal.addEventListener("click", (event) => {
+    if (
+      event.target.id !== "modalImage" &&
+      event.target.id !== "closeBtn" &&
+      event.target.id !== "prevBtn" &&
+      event.target.id !== "nextBtn"
+    ) {
+      modal.classList.add("hidden");
+    }
+  });
 
-  // TODO: (Issue #4) Create a function to update the state of the navigation buttons based on currentImageIndex
+  function updateState(currentImageIndex) {
+    if (currentImageIndex === 0) prevBtn.disabled = true;
+    else if (currentImageIndex === images.length - 1) nextBtn.disabled = true;
+    else {
+      prevBtn.disabled = false;
+      nextBtn.disabled = false;
+    }
+  }
 });
