@@ -11,11 +11,23 @@ document.addEventListener("DOMContentLoaded", () => {
     // TODO: (Issue #1) Add an event listener for each image in the gallery to show it in the modal when clicked
     images.forEach(function (image) {
         image.addEventListener("click", function (event) {
-            modalImage.setAttribute("src", image.getAttribute("src"));
+            currentImageIndex = images.indexOf(image);
+            updateModalImage(currentImageIndex);
             modal.classList.toggle("hidden");
         });
     });
     // TODO: (Issue #2) Add event listeners for the prevBtn and nextBtn for modal navigation functionality
+    function updateModalImage(imgIndex) {
+        modalImage.setAttribute("src", images[imgIndex].getAttribute("src"));
+    }
+
+    prevBtn.addEventListener("click", function () {
+        updateModalImage(--currentImageIndex);
+    });
+    nextBtn.addEventListener("click", function () {
+        updateModalImage(++currentImageIndex);
+    });
+
     // Clean Code Hint: Issue #1 and #2 both deal with updating the modal image based on currentImageIndex. Consider creating a function to handle this functionality.
 
     // TODO: (Issue #3) Add an event listener for the closeBtn to close the modal
