@@ -12,20 +12,24 @@ document.addEventListener("DOMContentLoaded", () => {
     images.forEach(function (image) {
         image.addEventListener("click", function (event) {
             currentImageIndex = images.indexOf(image);
-            updateModalImage(currentImageIndex);
-            modal.classList.toggle("hidden");
+            updateModalImage();
+            modal.classList.remove("hidden");
         });
     });
     // TODO: (Issue #2) Add event listeners for the prevBtn and nextBtn for modal navigation functionality
-    function updateModalImage(imgIndex) {
-        modalImage.setAttribute("src", images[imgIndex].getAttribute("src"));
+    function updateModalImage(indexUpdate = 0) {
+        currentImageIndex += indexUpdate;
+        prevBtn.disabled = currentImageIndex === 0;
+        nextBtn.disabled = currentImageIndex === images.length - 1;
+        //prettier-ignore
+        modalImage.setAttribute("src",images[currentImageIndex].getAttribute("src"));
     }
 
     prevBtn.addEventListener("click", function () {
-        updateModalImage(--currentImageIndex);
+        updateModalImage(-1);
     });
     nextBtn.addEventListener("click", function () {
-        updateModalImage(++currentImageIndex);
+        updateModalImage(+1);
     });
 
     // Clean Code Hint: Issue #1 and #2 both deal with updating the modal image based on currentImageIndex. Consider creating a function to handle this functionality.
