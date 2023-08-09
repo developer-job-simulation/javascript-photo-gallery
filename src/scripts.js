@@ -5,6 +5,11 @@ function addImageToModal(imageIndex) {
   modalImage.src = images[imageIndex].src;
 }
 
+function handleNavigationButtonsState() {
+  prevBtn.disabled = currentImageIndex === 0;
+  nextBtn.disabled = currentImageIndex === images.length - 1;
+}
+
 function activateImageModal() {
   images.forEach((element) => {
     element.addEventListener("click", (e) => {
@@ -18,6 +23,7 @@ function activateImageModal() {
 function addInteractivityPreviousButton() {
   prevBtn.addEventListener("click", (e) => {
     currentImageIndex = currentImageIndex === 0 ? 0 : currentImageIndex - 1;
+    handleNavigationButtonsState();
     addImageToModal(currentImageIndex);
   });
 }
@@ -28,6 +34,7 @@ function addInteractivityNextButton() {
       currentImageIndex === images.length
         ? images.length
         : currentImageIndex + 1;
+    handleNavigationButtonsState();
     addImageToModal(currentImageIndex);
   });
 }
@@ -53,6 +60,4 @@ document.addEventListener("DOMContentLoaded", () => {
   addInteractivityPreviousButton();
   addInteractivityNextButton();
   activateModalClose();
-
-  // TODO: (Issue #4) Create a function to update the state of the navigation buttons based on currentImageIndex
 });
