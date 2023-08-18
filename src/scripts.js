@@ -31,6 +31,20 @@ document.addEventListener("DOMContentLoaded", () => {
   })
 
   // TODO: (Issue #4) Create a function to update the state of the navigation buttons based on currentImageIndex
+  setDisableButton = () => {
+    if(currentImageIndex === 0){
+      prevBtn.disabled = true;
+    }else{
+      prevBtn.disabled = false;
+    }
+
+    if(currentImageIndex === images.length-1){
+      nextBtn.disabled = true;
+    }else{
+      nextBtn.disabled = false;
+    }
+
+  }
 
 
   // Clean Code Hint: Issue #1 and #2 both deal with updating the modal image based on currentImageIndex. Consider creating a function to handle this functionality.
@@ -38,5 +52,6 @@ document.addEventListener("DOMContentLoaded", () => {
     console.log(i);
     modalImage.src = images[i].src;
     currentImageIndex = i;
+    setDisableButton();
   }
 });
