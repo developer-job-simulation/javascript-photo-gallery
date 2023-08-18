@@ -24,6 +24,11 @@ document.addEventListener("DOMContentLoaded", () => {
   closeBtn.addEventListener('click',()=>{ modal.classList.add('hidden') })
 
   // TODO: (Issue #3) Add an event listener to close the modal when clicking the modal background
+  modal.addEventListener('click', (event)=>{
+    if(event.target == modal){
+      modal.classList.add('hidden');
+    }
+  })
 
   // TODO: (Issue #4) Create a function to update the state of the navigation buttons based on currentImageIndex
 
