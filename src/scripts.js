@@ -21,6 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
   nextBtn.addEventListener('click', ()=>setImageInModal(currentImageIndex+1));
 
   // TODO: (Issue #3) Add an event listener for the closeBtn to close the modal
+  closeBtn.addEventListener('click',()=>{ modal.classList.add('hidden') })
 
   // TODO: (Issue #3) Add an event listener to close the modal when clicking the modal background
 
