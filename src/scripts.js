@@ -17,7 +17,8 @@ document.addEventListener("DOMContentLoaded", () => {
   })
 
   // TODO: (Issue #2) Add event listeners for the prevBtn and nextBtn for modal navigation functionality
-  
+  prevBtn.addEventListener('click', ()=>setImageInModal(currentImageIndex-1));
+  nextBtn.addEventListener('click', ()=>setImageInModal(currentImageIndex+1));
 
   // TODO: (Issue #3) Add an event listener for the closeBtn to close the modal
 
