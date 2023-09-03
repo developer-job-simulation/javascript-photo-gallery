@@ -8,7 +8,20 @@ document.addEventListener("DOMContentLoaded", () => {
   const images = Array.from(document.querySelectorAll(".image"));
   let currentImageIndex = 0;
 
-  // TODO: (Issue #1) Add an event listener for each image in the gallery to show it in the modal when clicked
+  // Function to open the modal and display the clicked image
+  function openModal(imageSrc) {
+    modalImage.src = imageSrc; // Set the image source in the modal
+    modal.style.display = "block"; // Show the modal
+  }
+
+  // Add click event listeners to all images
+  images.forEach((image, index) => {
+    image.addEventListener("click", () => {
+      currentImageIndex = index; // Update the current image index
+      const imageSrc = image.getAttribute("src");
+      openModal(imageSrc); // Call the openModal function with the clicked image source
+    });
+  });
 
   // TODO: (Issue #2) Add event listeners for the prevBtn and nextBtn for modal navigation functionality
   // Clean Code Hint: Issue #1 and #2 both deal with updating the modal image based on currentImageIndex. Consider creating a function to handle this functionality.
