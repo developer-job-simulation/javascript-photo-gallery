@@ -28,7 +28,7 @@ body {
 }
 
 .modal {
-  display: flex;
+  display: none;
   justify-content: center;
   align-items: center;
   position: fixed;
@@ -41,16 +41,20 @@ body {
   background-color: rgba(0, 0, 0, 0.8);
 }
 
+.modal-image {
+  max-width: 90%;
+    max-height: 90%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
 .hidden {
   display: none;
 }
 
-.modal-image {
-  max-width: 90%;
-  max-height: 90%;
-  margin: auto;
-  display: block;
-}
+
 
 .close {
   position: absolute;
