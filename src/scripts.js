@@ -21,7 +21,6 @@ document.addEventListener("DOMContentLoaded", () => {
     
   }
 
-
   // Add click event listeners to all images
   images.forEach((image, index) => {
     image.addEventListener("click", () => {
@@ -51,7 +50,6 @@ closeBtn.addEventListener("click", () => {
   modal.classList.add("hidden"); // Add the "hidden" class to hide the modal
 });
 
-
   // TODO: (Issue #3) Add an event listener to close the modal when clicking the modal background
 
 // Add click event listener for the modal background to close the modal
@@ -59,6 +57,7 @@ modal.addEventListener("click", (event) => {
   if (event.target === modal) {
     modal.classList.add("hidden"); // Add the "hidden" class to hide the modal
   }
+
 });
   // TODO: (Issue #4) Create a function to update the state of the navigation buttons based on currentImageIndex
 
@@ -72,6 +71,7 @@ function updateModalWithImage(index) {
     nextBtn.disabled = currentImageIndex === images.length - 1;
   }
 }
+
 
 });
   
