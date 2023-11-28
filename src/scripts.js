@@ -8,14 +8,61 @@ document.addEventListener("DOMContentLoaded", () => {
   const images = Array.from(document.querySelectorAll(".image"));
   let currentImageIndex = 0;
 
-  // TODO: (Issue #1) Add an event listener for each image in the gallery to show it in the modal when clicked
+  // Event Listeners
 
-  // TODO: (Issue #2) Add event listeners for the prevBtn and nextBtn for modal navigation functionality
-  // Clean Code Hint: Issue #1 and #2 both deal with updating the modal image based on currentImageIndex. Consider creating a function to handle this functionality.
+  images.forEach((image, index) => {
+    image.addEventListener('click', () => {
+      openModal(index);
+    });
+  });
 
-  // TODO: (Issue #3) Add an event listener for the closeBtn to close the modal
+  modal.addEventListener("click", (event) => {
+    if (event.target === modal) {
+      closeModal();
+    }
+  });
 
-  // TODO: (Issue #3) Add an event listener to close the modal when clicking the modal background
+  prevBtn.addEventListener('click', () => {
+    showPrevImage();
+  });
+  
+  nextBtn.addEventListener('click', () => {
+    showNextImage();
+  });
 
-  // TODO: (Issue #4) Create a function to update the state of the navigation buttons based on currentImageIndex
+  closeBtn.addEventListener('click', () => {
+    closeModal();
+  });
+
+  // Functions
+
+  function openModal(index) {
+    modal.classList.remove("hidden");
+    modalImage.src = images[index].src;
+    currentImageIndex = index;
+    updateButtonState();
+  };
+
+  function closeModal() {
+    modal.classList.add("hidden");
+  };
+
+  function showPrevImage() {
+    currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
+    modalImage.src = images[currentImageIndex].src;
+    updateButtonState();
+  }
+
+  function showNextImage() {
+    currentImageIndex = (currentImageIndex + 1) % images.length;
+    modalImage.src = images[currentImageIndex].src;
+    updateButtonState();
+  }
+
+  function updateButtonState() {
+    prevBtn.disabled = currentImageIndex === 0;
+    nextBtn.disabled = currentImageIndex === images.length - 1;
+  };
+
+  updateButtonState();
 });
