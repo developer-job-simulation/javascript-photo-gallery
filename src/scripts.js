@@ -37,14 +37,14 @@ document.addEventListener("DOMContentLoaded", () => {
   // Functions
 
   function openModal(index) {
-    modal.className = "modal";
+    modal.classList.remove("hidden");
     modalImage.src = images[index].src;
     currentImageIndex = index;
     updateButtonState();
   };
 
   function closeModal() {
-    modal.className = "modal hidden";
+    modal.classList.add("hidden");
   };
 
   function showPrevImage() {
